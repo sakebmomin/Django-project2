@@ -1,0 +1,31 @@
+{% include 'navbar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="{% static 'js/index.js' %}"></script>
+    
+</head>
+<body style="text-align:center; background-color: gray;">
+    <br><br><br><br>
+    <!-- <h1 style="background-color:red; color: white; padding: 2%;">Welcome To Home Page</h1> -->
+    <div class="container">
+    <img src = "{% static 'images/MS.jpg' %}" height="300" width="1100"  class="d-inline-block align-top">
+     <h1><b><div class="centered">Welcome To Home Page</div></b></h1></b>
+     
+    </div>
+    <style>
+        .centered{
+            position: absolute;
+            top: 40%;
+            left: 30%;
+            
+            /* transform: translate(-50%, -50%); */
+        }
+    </style>
+</body>
+</html>

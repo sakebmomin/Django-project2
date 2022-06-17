@@ -1,0 +1,31 @@
+{% include 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align:center; background-color: gray; "><br>
+    <h1 style="background-color:red; color: white; padding: 2%;">LOGIN</h1><br><br>
+    
+    <form method="post">
+        {% csrf_token %}
+        
+        Username <input type="text" name="username" id="username" placeholder="Enter Username"> <p></p>
+        Password <input type="password" name="password" id="password"placeholder="Enter Password"> <p></p>
+        <input type="submit" value="Submit" style="background-color:blue ; color: white;" >
+        
+    </form>
+    
+    <h1 style="color: red;">{{msg}}</h1>
+    <style>
+        #username,#password{
+            background-color: aqua;
+        }
+
+        
+    </style>  
+</body>
+</html>

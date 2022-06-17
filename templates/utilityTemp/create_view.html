@@ -1,0 +1,42 @@
+{% include 'navbar.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align:center; background-color: gray;">
+    {% if user.is_authenticated %}
+    <h1 style="color:green;">Add Product Form</h1>
+    <form method="POST" enctype="multipart/form-data">
+
+        <!-- Security token -->
+        {% csrf_token %}
+    
+        <!-- Using the formset -->
+        {{ form.as_p }}
+        
+        <input type="submit" value="Submit" style="background-color:blue; color:white">
+    </form>
+
+    <h1 style="color: red;">
+    {{success}}
+    </h1>
+
+    <style>
+        #id_quantity,#id_name,#id_price{
+            background-color: aqua;
+            
+        }
+
+    </style>
+
+{% else %}
+    <br><br><br><br>
+    <h2 style="background-color:red; color: white; padding: 2%;">Login Required To View This Page</h2>
+{% endif %}    
+    
+</body>
+</html>
